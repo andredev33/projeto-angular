@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-full-banner',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./full-banner.component.scss']
 })
 export class FullBannerComponent implements OnInit {
+@Input() moviesbanner: any;
+
 
   constructor() { }
 

@@ -1,52 +1,83 @@
-import { Component } from '@angular/core';
+import { FilmeService } from './services/filme.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'netflixclone';
-  titulos: Array<any> = [{
-    trailer: 'assets/videos/trailer_guardioes_da_galaxia_1080p.mp4',
-    cover:'assets/images/guardios-da-galaxia.jpg',
-    name:'Guardiões da galaxia',
-    relevance: 66,
-    age: 0,
-    parts: 2,
-    categories:['Épico', 'Filme de fantasia', 'Viagem no espaço']
-  },{
-    trailer: 'assets/videos/trailer_guardioes_da_galaxia_1080p.mp4',
-    cover:'assets/images/guardios-da-galaxia.jpg',
-    name:'Guardiões da galaxia 2',
-    relevance: 77,
-    age: 12,
-    parts: 2,
-    categories:['Épico', 'Filme de fantasia', 'Viagem no espaço']
-  },{
-    trailer: 'assets/videos/trailer_guardioes_da_galaxia_1080p.mp4',
-    cover:'assets/images/guardios-da-galaxia.jpg',
-    name:'Guardiões da galaxia 3',
-    relevance: 88,
-    age: 14,
-    parts: 2,
-    categories:['Épico', 'Filme de fantasia', 'Viagem no espaço']
-  },{
-    trailer: 'assets/videos/trailer_guardioes_da_galaxia_1080p.mp4',
-    cover:'assets/images/guardios-da-galaxia.jpg',
-    name:'Guardiões da galaxia 4',
-    relevance: 99,
-    age: 16,
-    parts: 2,
-    categories:['Épico', 'Filme de fantasia', 'Viagem no espaço']
-  },{
-    trailer: 'assets/videos/trailer_guardioes_da_galaxia_1080p.mp4',
-    cover:'assets/images/guardios-da-galaxia.jpg',
-    name:'Guardiões da galaxia 5',
-    relevance: 99,
-    age: 18,
-    parts: 2,
-    categories:['Épico', 'Filme de fantasia', 'Viagem no espaço']
+export class AppComponent implements OnInit {
+
+  popmovies: any;
+  latestmovies: any;
+  nowplayingmovies: any;
+  topratedmovies: any;
+  upcomingmovies: any;
+  tvpopular: any;
+
+  constructor(private filmeService: FilmeService) {
+
   }
-];
+
+  ngOnInit() {
+    this.getFilmes();
+    this.getUpComing();
+    this.getTopRated();
+    this.getTvpopular();
+  }
+
+  getFilmes() {
+    this.filmeService.buscaFilmesPop().subscribe(data => {
+      this.popmovies = data.results;
+      console.log(this.popmovies);
+    }, error => {
+      console.log("Erro: ", error);
+    })
+  }
+
+  getLatestMovies() {
+    this.filmeService.buscaFilmesPop().subscribe(data => {
+      this.latestmovies = data.results;
+      console.log(this.latestmovies);
+    }, error => {
+      console.log("Erro: ", error);
+    })
+  }
+
+  getNowPlaying() {
+    this.filmeService.buscaFilmesNowPlaying().subscribe(data => {
+      this.latestmovies = data.results;
+      console.log(this.latestmovies);
+    }, error => {
+      console.log("Erro: ", error);
+    })
+  }
+
+  getTopRated() {
+    this.filmeService.buscaFilmesTopRated().subscribe(data => {
+      this.topratedmovies = data.results;
+      console.log(this.topratedmovies);
+    }, error => {
+      console.log("Erro: ", error);
+    })
+  }
+
+  getUpComing() {
+    this.filmeService.buscaFilmesUpComing().subscribe(data => {
+      this.upcomingmovies = data.results;
+      console.log(this.upcomingmovies);
+    }, error => {
+      console.log("Erro: ", error);
+    })
+  }
+
+  getTvpopular() {
+    this.filmeService.buscarTVPopular().subscribe(data => {
+      this.tvpopular = data.results;
+      console.log(this.tvpopular);
+    }, error => {
+      console.log("Erro: ", error);
+    })
+  }
+
 }

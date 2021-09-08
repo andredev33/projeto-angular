@@ -1,10 +1,8 @@
-
 <app-nav-bar></app-nav-bar>
 <div class="content-fluid">
-<app-full-banner></app-full-banner>
-<app-list-titles title="Adicionados recentimente" [listadefilmes]="titulos" ></app-list-titles>
-<app-list-titles title="Em alta" [listadefilmes]="titulos"></app-list-titles>
-<app-list-titles title="Continue assistino como Andre silva" [listadefilmes]="titulos"></app-list-titles>
+  <app-full-banner></app-full-banner>
+    <app-list-titles title="Adicionados recentimente" [titulos]="upcomingmovies"></app-list-titles>
+    <app-list-titles title="Em alta" [titulos]="popmovies"></app-list-titles>
+    <app-list-titles title="Continue assistindo" [titulos]="topratedmovies"></app-list-titles>
+    <app-list-titles title="Series Populares" [titulos]="tvpopular"></app-list-titles>
 </div>
-
-<app-footer></app-footer>

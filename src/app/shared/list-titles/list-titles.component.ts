@@ -1,3 +1,6 @@
+import { IListaFilmes } from './../../models/FilmeAPI.model';
+import { Imagens } from './../../models/placeholder.model';
+import { CrudService } from './../../services/crud.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +9,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./list-titles.component.scss']
 })
 export class ListTitlesComponent implements OnInit {
- @Input() title!: String;
- @Input() listadefilmes!: Array<any>;
-  constructor() { }
+  @Input() title!: String;
+  @Input() titulos!: any;
+
+  constructor( ) { }
 
   ngOnInit(): void {
   }

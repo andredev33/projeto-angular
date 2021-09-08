@@ -8,6 +8,7 @@ import { FullBannerComponent } from './shared/full-banner/full-banner.component'
 import { ListTitlesComponent } from './shared/list-titles/list-titles.component';
 import { TitlesComponent } from './shared/titles/titles.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
