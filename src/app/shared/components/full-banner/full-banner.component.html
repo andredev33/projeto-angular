@@ -1,0 +1,40 @@
+<div class="row no-gutters">
+  <div class="col-12 text-white">
+    <div class="d-flex flex-nowrap overflow-hidden">
+      <div >
+        <h1 class="h3">{{ titulos?.title }}</h1>
+        <small class="d-flex my-2">
+          <span class="mr-3">{{ titulos?.release_date || titulos?.first_air_date}} </span>
+          <span class="mr-3">12 </span>
+          <span> 182min</span>
+        </small>
+        <p class="card-text">{{ titulos?.overview }}</p>
+        <a href="#" class="btn btn-primary text-uppercase font-weight-bold">Assistir</a>
+      </div>
+      <div class="content-fluid">
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{
+            titulos?.backdrop_path
+          }}"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="card mb-2" style="max-width: 1280px;">
+  <div class="row no-gutters">
+    <div class="col-12 text-white">
+      <img src="https://image.tmdb.org/t/p/w500/{{
+        titulos?.backdrop_path
+      }}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-10">
+      <div class="card-body">
+        <h5 class="card-title">{{ titulos?.title }}</h5>
+        <p class="card-text">{{ titulos?.overview }}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+-->

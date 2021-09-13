@@ -1,0 +1,5 @@
+<app-full-banner *ngFor="let titulos of tvpopular |slice:0:1" [titulos]="titulos"></app-full-banner>
+    <app-list-titles title="Adicionados recentemente" [titulos]="upcomingmovies"></app-list-titles>
+    <app-list-titles title="Em alta" [titulos]="popmovies"></app-list-titles>
+    <app-list-titles title="Continue assistindo" [titulos]="topratedmovies"></app-list-titles>
+    <app-list-titles title="Series Populares" [titulos]="tvpopular"></app-list-titles>

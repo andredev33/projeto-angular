@@ -1,0 +1,13 @@
+<h2 class="h4">{{ title }}</h2>
+
+<div class="slick-wrapper">
+  <ngx-slick-carousel class="carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let titulos of titulos" class="slide">
+      <img
+        src="https://image.tmdb.org/t/p/w500/{{ titulos?.poster_path }}"
+        alt="{{ titulos?.title || titulos?.original_name }}"
+        style="width: 200px"
+      />
+    </div>
+  </ngx-slick-carousel>
+</div>
