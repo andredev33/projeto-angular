@@ -1,0 +1,12 @@
+<div class="list-titles" tabindex="0">
+<h2 class="h4" >{{title}}</h2>
+
+<div class="slick-wrapper border-slider">
+
+  <ngx-slick-carousel class="carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let titulos of titulos" class="slide" style="margin: 4px;">
+      <app-titles [titulos]="titulos"></app-titles>
+    </div>
+  </ngx-slick-carousel>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div *ngFor="let titulos of titulos">
+    <div
+      *ngIf="titulos?.poster_path"
+      class="card text-white bg-dark mb-3"
+      style="max-width: 100%"
+      tabindex="0"
+    >
+      <div class="row g-0 card-search-contrast">
+        <div class="col-md-2"  tabindex="0">
+          <app-titles [titulos]="titulos" ></app-titles>
+        </div>
+        <div class="col-md-8" >
+          <div class="card-body" >
+            <h5 class="card-title">{{ titulos?.title || titulos?.name }}</h5>
+            <p class="card-text">{{ titulos?.overview }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="row no-gutters full-banner-contrast">
+  <div class="col-12 text-white ">
+    <div class="d-flex flex-nowrap overflow-hidden">
+      <div >
+        <h1 class="h3">{{ titulos?.title }}</h1>
+        <small class="d-flex my-2">
+          <span class="margin: 1rem">{{ titulos?.release_date || titulos?.first_air_date | date:'dd-MMM-yyyy'}} </span>
+          <span class="margin 1rem">12</span>
+          <span> 182min</span>
+        </small>
+        <p class="card-text">{{ titulos?.overview }}</p>
+        <a href="#" class="btn btn-danger text-uppercase font-weight-bold button-contrast">Assistir</a>
+      </div>
+      <div>
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{
+            titulos?.backdrop_path
+          }}"
+        />
+      </div>
+    </div>
+  </div>
+</div>
