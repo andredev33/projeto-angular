@@ -1,10 +1,11 @@
-
 body {
-  background-color: #1B1B1B!important;
+  background-color: var(--background-color);
   padding-top: 60px;
+
 }
+
 .backdrop {
-  background-color: rgba(0,0,0,.4);
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 60px;
   left: 0;
@@ -13,4 +14,72 @@ body {
   z-index: 999;
 }
 
+p{
+  color: var(--text-color);
+}
+.off-contrast{
+  --background-color: #1a1a1a;
+}
+.on-contrast {
+  --background-color: #000000;
+  --text-color: #fff;
+  .navbar ul.nav li {
+    color: #fff;
+  }
+  .navbar ul.nav li:hover{
+    color: rgb(230, 214, 0);
+    border: solid rgb(230, 214, 0);
+  }
 
+  .navbar ul.nav{
+    border-bottom: #fff;
+  }
+  .navbar {
+    border-bottom: #fff solid ;
+  }
+  .footer-border{
+    color: rgb(255, 255, 255);
+    border-top: solid;
+  }
+  .footer-border a:hover{
+    background-color: rgb(230, 214, 0);
+  }
+  .card-details-border{
+    color: #fff;
+  }
+  .title-card{
+    border:  #fff solid ;
+  }
+  .title-card:hover{
+    color: rgb(230, 214, 0);
+    border: solid rgb(230, 214, 0);
+  }
+  .card-img-border-contrast{
+    background-color: #000000;
+    border-top: #fff solid;
+    border-bottom: #fff solid;
+  }
+  .card-img-border-contrast .img-backdrop{
+    opacity: 0.2;
+
+  }
+  .card-search-contrast{
+    background-color: #000000;
+    border-top: #fff solid;
+    border-bottom: #fff solid;
+  }
+  .full-banner-contrast{
+    border-bottom: #fff solid;
+  }
+  .card-datails-backdrop-contrast{
+    opacity: 0.4;
+  }
+  .button-contrast{
+    border: solid #fff;
+    color: #fff;
+  }
+  .button-contrast:hover{
+    color: rgb(230, 214, 0);
+    border: solid rgb(230, 214, 0);
+  }
+}

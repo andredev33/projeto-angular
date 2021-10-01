@@ -1,5 +1,4 @@
 .full-banner {
-  background-image: url('/assets/images/full-banner.jpg');
   min-height: 120px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -14,7 +13,6 @@
   border: none;
   min-width: 100px;
 }
-
 
 @media (min-width: 576px) {
   .full-banner {

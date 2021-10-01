@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
-import { FilmeService } from '../../../core/services/filme.service';
+import { FilmeService } from '../../core/services/filme.service';
 
 @Component({
   selector: 'app-series',
   templateUrl: './series.component.html',
   styleUrls: ['./series.component.scss']
 })
-export class SeriesComponent implements OnInit {
+export class SeriesComponent implements OnInit, OnChanges {
 
   tvpopular: any;
   tvtoprated: any;
@@ -15,13 +15,19 @@ export class SeriesComponent implements OnInit {
   tvon: any;
   tvairingtoday: any;
 
-  constructor(private filmeService: FilmeService) { }
+  constructor(private filmeService: FilmeService) {
+
+
+  }
 
   ngOnInit(): void {
     this.getTvpopular();
     this.getTvTopRated();
     this.getTVOn();
     this.getTVAiringToday();
+  }
+  ngOnChanges() {
+
   }
 
   getTvpopular() {
@@ -42,7 +48,7 @@ export class SeriesComponent implements OnInit {
     })
   }
 
-  getTVLatest(){
+  getTVLatest() {
     this.filmeService.bucarTVLatest().subscribe(data => {
       this.tvlatest = data.results;
     }, error => {
@@ -50,7 +56,7 @@ export class SeriesComponent implements OnInit {
     })
   }
 
-  getTVOn(){
+  getTVOn() {
     this.filmeService.bucarTVOn().subscribe(data => {
       this.tvon = data.results;
     }, error => {
@@ -58,7 +64,7 @@ export class SeriesComponent implements OnInit {
     })
   }
 
-  getTVAiringToday(){
+  getTVAiringToday() {
     this.filmeService.bucarTVAiringToday().subscribe(data => {
       this.tvairingtoday = data.results;
     }, error => {

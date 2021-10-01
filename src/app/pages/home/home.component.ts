@@ -1,41 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FilmeService } from './../../../core/services/filme.service';
+
+import { FilmeService } from '../../core/services/filme.service';
 
 @Component({
-  selector: 'app-filmes',
-  templateUrl: './filmes.component.html',
-  styleUrls: ['./filmes.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class FilmesComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   popmovies: any;
   latestmovies: any;
   nowplayingmovies: any;
   topratedmovies: any;
   upcomingmovies: any;
+  tvpopular: any;
 
-  constructor(private filmeService: FilmeService) { }
-
-  ngOnInit(): void {
+  constructor(private FilmeService: FilmeService){
     this.getFilmes();
-    this.getLatestMovies();
-    this.getNowPlaying();
-    this.getUpComing();
     this.getTopRated();
+    this.getTvpopular();
+    this.getUpComing();
+
   }
 
-  getFilmes() {
-    this.filmeService.buscaFilmesPop().subscribe(data => {
+  ngOnInit(){
+
+
+  }
+  getFilmes(){
+    this.FilmeService.buscaFilmesPop().subscribe(data => {
       this.popmovies = data.results;
       console.log(this.popmovies);
     }, error => {
       console.log("Erro: ", error);
     })
+    const titulo = this.popmovies;
+
   }
 
   getLatestMovies() {
-    this.filmeService.buscaFilmesPop().subscribe(data => {
+    this.FilmeService.buscaFilmesPop().subscribe(data => {
       this.latestmovies = data.results;
       console.log(this.latestmovies);
     }, error => {
@@ -44,8 +50,8 @@ export class FilmesComponent implements OnInit {
   }
 
   getNowPlaying() {
-    this.filmeService.buscaFilmesNowPlaying().subscribe(data => {
-      this.latestmovies = data.results;
+    this.FilmeService.buscaFilmesNowPlaying().subscribe(data => {
+      this.nowplayingmovies = data.results;
       console.log(this.latestmovies);
     }, error => {
       console.log("Erro: ", error);
@@ -53,7 +59,7 @@ export class FilmesComponent implements OnInit {
   }
 
   getTopRated() {
-    this.filmeService.buscaFilmesTopRated().subscribe(data => {
+    this.FilmeService.buscaFilmesTopRated().subscribe(data => {
       this.topratedmovies = data.results;
       console.log(this.topratedmovies);
     }, error => {
@@ -62,9 +68,18 @@ export class FilmesComponent implements OnInit {
   }
 
   getUpComing() {
-    this.filmeService.buscaFilmesUpComing().subscribe(data => {
+    this.FilmeService.buscaFilmesUpComing().subscribe(data => {
       this.upcomingmovies = data.results;
       console.log(this.upcomingmovies);
+    }, error => {
+      console.log("Erro: ", error);
+    })
+  }
+
+  getTvpopular() {
+    this.FilmeService.buscarTVPopular().subscribe(data => {
+      this.tvpopular = data.results;
+      console.log(data);
     }, error => {
       console.log("Erro: ", error);
     })

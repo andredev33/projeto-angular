@@ -73,6 +73,12 @@ export class ApiTmdbService {
 
   }
 
+  public bucarMultiSearch(): Observable<any>{
+    const url = `${this.apiURL}search/multi?api_key=${this.key}&language=${this.lingua}&query=jojo´s&page=1&include_adult=false`;
+    return this.http.get<any>(url);
+
+  }
+
   public getFilmes(){
     this.buscaFilmesPop().subscribe(data => {
       this.popmovies = data.results;

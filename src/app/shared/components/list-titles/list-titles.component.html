@@ -1,29 +1,12 @@
-<!--<div class="p-3 list-titles">
-  <h2 class="h4">{{ title }}</h2>
+<div class="list-titles" tabindex="0">
+<h2 class="h4" >{{title}}</h2>
 
-  <div class="d-flex flex-nowrap overflow-hidden">
-    <app-titles *ngFor="let titulos of titulos | slice:0:6" [titulos]="titulos"></app-titles>
-  </div>
-</div>
-<div class="list-titles">
-    <h2 class="h4">{{title}}</h2>
-    <ngx-slick-carousel [config]="sliderConfig" class="carousel">
-      <div class="slide" *ngFor="let titulos of titulos" ngxSlickItem>
-        <img
-        src="https://image.tmdb.org/t/p/w500/{{ titulos?.poster_path }}"
-        alt="{{ titulos?.title || titulos?.original_name}}"
-      />
-      </div>
-    </ngx-slick-carousel>
-</div>-->
-<h2 class="h4">{{title}}</h2>
-
-<div class="slick-wrapper">
+<div class="slick-wrapper border-slider">
 
   <ngx-slick-carousel class="carousel" [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let titulos of titulos" class="slide">
+    <div ngxSlickItem *ngFor="let titulos of titulos" class="slide" style="margin: 4px;">
       <app-titles [titulos]="titulos"></app-titles>
     </div>
   </ngx-slick-carousel>
   </div>
-
+</div>

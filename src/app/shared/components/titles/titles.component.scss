@@ -6,7 +6,7 @@ h2 {
 }
 .title-item {
   position: relative;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 .title-item img {
   width: 100%;
@@ -14,7 +14,7 @@ h2 {
 .title-item video {
   width: 100%;
   display: none;
-  position: absolute;
+  position: absolut e;
   top: 0;
   left: 0;
 }
@@ -34,7 +34,7 @@ h2 {
   right: 0;
   color: #fff;
   height: 100%;
-  padding: 10px;
+  padding: 20px;
   background: -prefix-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.7));
   background: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.7));
   display: flex;

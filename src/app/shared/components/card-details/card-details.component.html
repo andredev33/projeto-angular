@@ -1,0 +1,57 @@
+<!--<div class="card bg-dark text-white">
+  <img
+    src="https://image.tmdb.org/t/p/w500/{{ titulo?.backdrop_path }}"
+    class="card-img"
+    alt="{{ titulo?.title }}"
+  />
+  <div class="position-relative" tabindex="0">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <app-titles [titulos]="titulo"></app-titles>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ titulo?.title }}</h5>
+          <p class="card-text">{{ titulo?.overview }}</p>
+          <p class="card-text">
+            <small class="text-muted">{{
+              titulo?.release_date | date: "dd-MMM-yyyy"
+            }}</small><input type="button " value="Voltar" onClick="history.go(-1)">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<div class="m-2">
+  <button type="button" class="btn btn btn-dar button-contrast" onClick="history.go(-1)" >Volta</button>
+</div>
+<div class="card text-white card-img-border-contrast">
+  <img
+    src="https://image.tmdb.org/t/p/w500/{{ titulo?.backdrop_path }}"
+    class="card-img img-backdrop"
+    alt="backdrop"
+    style="height: 30rem; left: 50rem"
+  />
+  <div class="card-img-overlay card-backdrop-contrast">
+    <div class="row g-0">
+      <div class="col-md-3">
+        <app-titles [titulos]="titulo"></app-titles>
+      </div>
+      <div class="col-md">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ titulo?.title || titulo?.name || "Sem titulo" }}
+          </h5>
+          <p class="card-text">{{ titulo?.overview }}</p>
+          <p class="card-text">
+            <small class="text">{{
+              titulo?.release_date || titulo?.first_air_date
+                | date: "dd-MMM-yyyy"
+            }}</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,62 +1,89 @@
-<nav class="navbar navbar-dark bg-dark fixed-top">
-
-  <button class="navbar-toggler d-lg-none" type="button">
-      <img src="assets/images/hamburger.gif" alt="Menu">
-  </button>
-
-  <a class="navbar-brand flex-grow-1" routerLink="" href="#">
-      <img src="assets/images/logo.png" class="my-1 mx-2" alt="Netflix">
+<nav class="navbar navbar-dark bg-dark fixed-top" alt="navbar" tabindex="0" [style.fontSize]="fontSize + 'px'">
+  <a class="navbar-brand flex-grow-1" routerLink="/home" href="#" tabindex="0">
+    <img src="assets/images/logo.png" class="my-1 mx-2" alt="Netflix" />
   </a>
 
-  <ul class="nav text-white d-none d-lg-flex">
-      <li class="nav-item d-xl-none">
-          <a class="nav-link active text-reset" href="#">Navegar</a>
-      </li>
-      <li class="nav-item d-xl-none">
-          <a class="nav-link text-reset" href="#">Infantil</a>
-      </li>
-      <li class="nav-item d-none d-xl-flex">
-          <a class="nav-link text-reset" routerLink="/series" routerLinkActive="selected" href="#">Séries</a>
-      </li>
-      <li class="nav-item d-none d-xl-flex">
-          <a class="nav-link text-reset"  routerLink="/filmes" routerLinkActive="selected" href="#">Filmes</a>
-      </li>
-      <li class="nav-item d-none d-xl-flex">
-          <a class="nav-link text-reset" href="#" routerLink="/recentes" routerLinkActive="selected">Adicionados recentemente</a>
-      </li>
-      <li class="nav-item d-none d-xl-flex">
-          <a class="nav-link text-reset" href="#" routerLinkActive="selected">Minha lista</a>
-      </li>
+  <ul class="nav d-none d-lg-flex">
+    <li class="nav-item d-none d-xl-flex">
+      <a
+        class="nav-link text-reset"
+        routerLink="/series"
+        routerLinkActive="selected"
+        href="#"
+        tabindex="0"
+        >Séries</a
+      >
+    </li>
+    <li class="nav-item d-none d-xl-flex">
+      <a
+        class="nav-link text-reset"
+        routerLink="/filmes"
+        routerLinkActive="selected"
+        href="#"
+        tabindex="0"
+        >Filmes</a
+      >
+    </li>
+    <li class="nav-item d-none d-xl-flex">
+      <a
+        class="nav-link text-reset"
+        href="#"
+        routerLink="/recentes"
+        routerLinkActive="selected"
+        tabindex="0"
+        >Adicionados recentemente</a
+      >
+    </li>
+    <li class="nav-item d-none d-xl-flex">
+      <a
+        class="nav-link text-reset"
+        href="#"
+        routerLink="/mylist"
+        routerLinkActive="selected"
+        tabindex="0"
+        >Minha lista</a
+      >
+    </li>
   </ul>
-
-  <form class="form-inline">
-      <input class="form-control" type="search" placeholder="Busca">
-  </form>
-
+  <ul class="nav d-none d-lg-flex" alt="Lista de 4 itens de acessibilidade contraste depois aumentar fonte, restaurar fonte e diminuir fonte">
+    <li class="nav-item d-none d-xl-flex link-contrast" >
+      <a class="nav-link text-reset " tabindex="0">
+        <img
+          src="assets/images/contrast_white.png"
+          alt="Contraste"
+          class="mr-2"
+          (click)="switchContrast()"
+        />
+      </a>
+    </li>
+    <li class="nav-item d-none d-xl-flex link-contrast">
+      <a class="nav-link text-reset " tabindex="0"
+        ><img src="assets/images/A+.png" alt="Aumentar fonte" (click)="aumentarFonte()" class="mr-1"
+      /></a>
+    </li>
+    <li class="nav-item d-none d-xl-flex link-contrast">
+      <a class="nav-link text-reset " tabindex="0"
+        ><img src="assets/images/A.png" alt="Restaurar fonte" (click)="restaurarFonte()" class="mr-1"
+      /></a>
+    </li>
+    <li class="nav-item d-none d-xl-flex link-contrast">
+      <a class="nav-link text-reset " tabindex="0"
+        ><img src="assets/images/A-.png" alt="Diminuir fonte"  (click)="diminuirFonte()" class="mr-1"
+      /></a>
+    </li>
+  </ul>
+  <label>
+    <input
+      class="form-control"
+      type="search"
+      [formControl]="queryField"
+      (keyup.Enter)="navBarSearch($event)"
+      placeholder="Buscar"
+  /></label>
   <div class="media text-white p-2 d-none d-lg-flex">
-      <img src="" alt="Avatar" class="mr-2">
-      <div class="media-body">
-          <p class="h6 m-0 text-uppercase">Andre Silva</p>
-      </div>
+    <img src="assets/images/avatar-netflixclone.jpg" alt="Avatar" class="mr-2" />
+    <div class="media-body">
+      <p class="h6 m-0 text-uppercase">Andre Silva</p>
+    </div>
   </div>
-
-  <ul class="list-unstyled font-weight-bold sidebar">
-      <li class="media media-avatar">
-          <img src="" alt="Avatar" class="mr-2">
-          <div class="media-body">
-              <p class="h6 m-0">Andre Silva</p>
-              <small>Trocar de perfil</small>
-          </div>
-      </li>
-      <li class="divider"></li>
-      <li><a href="#" class="text-reset">Inicio</a></li>
-      <li><a href="#" class="text-reset">Minha lista</a></li>
-      <li><a href="#" class="text-reset">Séries de ação e aventura</a></li>
-      <li><a href="#" class="text-reset">Ação e aventura</a></li>
-      <li><a href="#" class="text-reset">Séries teen</a></li>
-      <li><a href="#" class="text-reset">Filmes africanos</a></li>
-      <li><a href="#" class="text-reset">Séries da América Latina</a></li>
-      <li><a href="#" class="text-reset">Filmes de Anime</a></li>
-  </ul>
-
 </nav>

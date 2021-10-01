@@ -1,35 +1,33 @@
+import { FilmeService } from '../../core/services/filme.service';
+import { MoviesService } from '../../core/services/movies.service';
 import { Component, OnInit } from '@angular/core';
 
 
-import { FilmeService } from './../core/services/filme.service';
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-filmes',
+  templateUrl: './filmes.component.html',
+  styleUrls: ['./filmes.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class FilmesComponent implements OnInit {
 
   popmovies: any;
   latestmovies: any;
   nowplayingmovies: any;
   topratedmovies: any;
   upcomingmovies: any;
-  tvpopular: any;
 
-  constructor(private FilmeService: FilmeService){
+  constructor(private FilmeService: FilmeService) {
+      this.getUpComing();
+      this.getPopMovies();
+      this.getTopRated();
+
+  }
+
+  ngOnInit(): void {
 
   }
 
-  ngOnInit(){
-
-    this.getFilmes();
-    this.getTopRated();
-    this.getTvpopular();
-    this.getUpComing();
-
-  }
-  getFilmes(){
+  getPopMovies(){
     this.FilmeService.buscaFilmesPop().subscribe(data => {
       this.popmovies = data.results;
       console.log(this.popmovies);
@@ -76,13 +74,5 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  getTvpopular() {
-    this.FilmeService.buscarTVPopular().subscribe(data => {
-      this.tvpopular = data.results;
-      console.log(this.tvpopular);
-    }, error => {
-      console.log("Erro: ", error);
-    })
-  }
 
 }

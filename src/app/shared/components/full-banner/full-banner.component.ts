@@ -13,7 +13,7 @@ export class FullBannerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('logaquiii', this.titulos);
+
   }
 
 }

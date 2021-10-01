@@ -1,6 +1,9 @@
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+
+import { IFilmeApi, IListaFilmes } from './../../shared/models/FilmeAPI.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +12,15 @@ export class FilmeService {
 
   lingua = 'pt-BR';
   regiao = 'BR';
+  private pages: number;
+  private searchmovies: any;
   private readonly apiURL ='https://api.themoviedb.org/3/';
-  private key = '5587269282cde005894b24ee3c0fab40';
+  private readonly key = '5587269282cde005894b24ee3c0fab40';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient){
+    this.pages = 1;
+    this.searchmovies = '';
+  }
 
   public buscaFilmesPop(): Observable<any> {
     const  url = `${this.apiURL}movie/popular?api_key=${this.key}&language=${this.lingua}&page=1`;
@@ -66,6 +74,33 @@ export class FilmeService {
     return this.http.get<any>(url);
 
   }
+
+  bucarSearch(search: any): Observable<IListaFilmes>{
+    const url = `${this.apiURL}search/multi?api_key=${this.key}&language=${this.lingua}&query=${search}&page=1&include_adult=false`;
+    console.log('Services filme.services.ts pesquisa: ', url);
+    return this.http.get<IListaFilmes>(url);
+
+  }
+  public pesquisa(): Observable<any>{
+    const url = `${this.apiURL}search/multi?api_key=${this.key}&language=${this.lingua}&query=${this.searchmovies}&page=1&include_adult=false`;
+    console.log('Services filme.services.ts pesquisa: ', url);
+    return this.http.get<any>(url);
+  }
+
+  public buscarDetails(id: any): Observable<any>{
+    const url = `${this.apiURL}tv/${id}?api_key=${this.key}&language=${this.lingua}`;
+    console.log('Detalhes: ', url);
+    return this.http.get<any>(url);
+  }
+
+  public buscarDetailsTv(id: any): Observable<any>{
+    const url = `https://api.themoviedb.org/3/tv/{tv_id}?api_key=<<api_key>>&language=pt-BR`;
+    console.log('Detalhes: ', url);
+    return this.http.get<any>(url);
+  }
+
+
+
 
 
 

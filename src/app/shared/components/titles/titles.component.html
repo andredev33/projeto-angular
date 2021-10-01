@@ -1,11 +1,11 @@
-<div class="title-item">
+<div class="title-item title-card">
   <img
     src="https://image.tmdb.org/t/p/w500/{{ titulos?.poster_path }}"
     alt="{{ titulos?.title || titulos?.original_name }}"
   />
-  <div class="items">
-    <div class="left-side">
-      <button type="button" class="btn-play">
+  <div class="items" tabindex="0" >
+    <div class="left-side" >
+      <button type="button" tabindex="0" class="btn-play" routerLink="/details/{{titulos?.id}}">
         <i class="material-icons">play_arrow</i>
       </button>
       <h2>{{ titulos?.title || titulos?.original_name }}</h2>

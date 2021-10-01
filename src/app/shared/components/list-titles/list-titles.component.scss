@@ -2,14 +2,17 @@
   max-width: 50px;
 }
 h2 {
-  color: #e5e5e5;
-
+  color: #ffffff;
+}
 .title-item {
   position: relative;
   margin-right: 10px;
 }
 .title-item img {
   width: 50%;
+}
+.slider-item{
+  margin: 4px;
 }
 .title-item video {
   width: 100%;
@@ -43,7 +46,7 @@ h2 {
   opacity: 0;
 }
 .title-item h2 {
-  color: #fff;
+  color: rgb(250, 233, 0);
   font-size: 20px;
   margin: 5px auto;
 }
@@ -121,20 +124,4 @@ h2 {
 .parts {
   font-weight: bold;
 }
-.movie {
-  margin: 20px 0;
-  .movie__images{
-    div.thumbnails .carousel{
-      width: 100%;
-      .slick-item{
-        transition: all 0.3s ease;
-      }
 
-      .slick-item:hover{
-        transform: scale(1.02);
-        cursor: pointer;
-      }
-    }
-  }
-}
-}

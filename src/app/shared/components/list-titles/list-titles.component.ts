@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AfterContentInit, Component, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
@@ -7,56 +8,27 @@ import { AfterContentInit, Component, HostListener, Input, OnDestroy, OnInit } f
 })
 export class ListTitlesComponent implements OnInit{
 
-  sticky = false;
+  constructor(private Router: Router){}
+
   @Input() title!: String;
   @Input() titulos!: any;
-  
   slideConfig = {
     "slidesToShow": 6,
-    "slidesToScroll": 3,
-    "dots": true,
+    "slidesToScroll": 1,
+    "dots": false,
+    "arrows": false,
     "infinite": false,
-    "responsive": [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 6,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+    "accessibility": true,
+    "adaptiveHeight": true,
+    "focusOnSelect": true
   };
 
 
-  ngOnInit(){}
+  ngOnInit(){
+
+  }
 
 
 
 }
 
-/*@HostListener('window:scroll', ['$event'])
-  handlesScroll(){
-    const windowScroll = window.pageYOffset;
-
-    if( windowScroll > this.header.nativeElement.offsetHeight){
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
-  }*/
