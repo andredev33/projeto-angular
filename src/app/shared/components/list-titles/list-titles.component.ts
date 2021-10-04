@@ -12,6 +12,7 @@ export class ListTitlesComponent implements OnInit{
 
   @Input() title!: String;
   @Input() titulos!: any;
+  @Input() tipo!: String;
   slideConfig = {
     "slidesToShow": 6,
     "slidesToScroll": 1,
@@ -25,7 +26,17 @@ export class ListTitlesComponent implements OnInit{
 
 
   ngOnInit(){
+    this.tipoUrl();
 
+  }
+
+  tipoUrl() {
+    if (this.tipo == "tv") {
+      this.tipo = "tv"
+      console.log('Tipo de: ', this.tipo);
+    } else {
+      this.tipo = "movie";
+    }
   }
 
 

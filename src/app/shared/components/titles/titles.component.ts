@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TitlesComponent implements OnInit {
 
   @Input() titulos: any;
+  @Input() tipo: any;
 
   constructor(private activatedRoute: ActivatedRoute) {
 
@@ -17,5 +18,16 @@ export class TitlesComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  tipoUrl() {
+    if (this.tipo == "tv") {
+      this.tipo = "movies"
+      console.log('Tipo de: ', this.tipo);
+    } else {
+      this.tipo = "tv";
+    }
+  }
+
+
 
 }
