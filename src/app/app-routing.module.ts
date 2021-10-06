@@ -11,7 +11,7 @@ import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'details/:parametro', component: DetailsComponent},
+  {path: 'details/:tipo/:parametro', component: DetailsComponent},
   {path: 'series', component: SeriesComponent},
   {path: 'filmes', component: FilmesComponent},
   {path: 'recentes', component: RecentesComponent},

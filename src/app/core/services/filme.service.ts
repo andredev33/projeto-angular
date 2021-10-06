@@ -87,21 +87,23 @@ export class FilmeService {
     return this.http.get<any>(url);
   }
 
-  public buscarDetails(id: any): Observable<any>{
-    const url = `${this.apiURL}tv/${id}?api_key=${this.key}&language=${this.lingua}`;
+
+  public buscarDetails(id: any, tipo:any): Observable<any>{
+    const url = `${this.apiURL}${tipo}/${id}?api_key=${this.key}&language=${this.lingua}`;
     console.log('Detalhes: ', url);
     return this.http.get<any>(url);
   }
 
   public buscarDetailsTv(id: any): Observable<any>{
-    const url = `https://api.themoviedb.org/3/tv/{tv_id}?api_key=<<api_key>>&language=pt-BR`;
+    const url = `${this.apiURL}tv/${id}?api_key=${this.key}&language=${this.lingua}`;
     console.log('Detalhes: ', url);
     return this.http.get<any>(url);
   }
-
-
-
-
+  public buscarDetailsMovies(id: any): Observable<any>{
+    const url = `${this.apiURL}Movies/${id}?api_key=${this.key}&language=${this.lingua}`;
+    console.log('Detalhes: ', url);
+    return this.http.get<any>(url);
+  }
 
 
 }

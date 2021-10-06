@@ -17,7 +17,9 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const par = this.activatedRoute.snapshot.paramMap.get('parametro');
-    this.filmeService.buscarDetails(par).subscribe(multsearch => {
+    const tipo = this.activatedRoute.snapshot.paramMap.get('tipo');
+    console.log(par, "Detalhes:", tipo);
+    this.filmeService.buscarDetails(par, tipo).subscribe(multsearch => {
       this.detailsmovies = multsearch;
     },
       (error) => console.error(error)

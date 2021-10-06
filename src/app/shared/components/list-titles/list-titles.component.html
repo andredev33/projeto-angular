@@ -5,7 +5,7 @@
 
   <ngx-slick-carousel class="carousel" [config]="slideConfig">
     <div ngxSlickItem *ngFor="let titulos of titulos" class="slide" style="margin: 4px;">
-      <app-titles [titulos]="titulos"></app-titles>
+      <app-titles [titulos]="titulos" [tipo]="tipo"></app-titles>
     </div>
   </ngx-slick-carousel>
   </div>
