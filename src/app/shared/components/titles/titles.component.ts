@@ -19,14 +19,6 @@ export class TitlesComponent implements OnInit {
 
   }
 
-  tipoUrl() {
-    if (this.tipo == "tv") {
-      this.tipo = "movies"
-      console.log('Tipo de: ', this.tipo);
-    } else {
-      this.tipo = "tv";
-    }
-  }
 
 
 

@@ -9,3 +9,53 @@
   color: rgb(148, 148, 148);
   font-weight: bold;
 }
+.relevance {
+  color: #3FAD56;
+  font-weight: bold;
+}
+.age {
+  padding: 2px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  font-size: 12px;
+  height: 24px;
+  border-radius: 2px;
+  color: #FFF;
+}
+.age-free {
+  background-color: rgb(0, 156, 76);
+}
+.age-free:before {
+  content: 'L';
+}
+.age-12 {
+  background-color: #CDA521;
+  color: #000;
+}
+.age-12:before {
+  content: '12';
+}
+.age-14 {
+  background-color: rgb(231, 121, 43);
+}
+.age-14:before {
+  content: '14';
+}
+.age-16 {
+  background-color: rgb(215, 38, 45);
+}
+.age-16:before {
+  content: '16';
+}
+.age-18 {
+  background-color: rgb(19, 17, 17);
+}
+.age-18:before {
+  content: '18';
+}
+.parts {
+  font-weight: bold;
+}
