@@ -24,6 +24,7 @@ import { ListSearchComponent } from './shared/components/list-search/list-search
 import { CardDetailsComponent } from './shared/components/card-details/card-details.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { AccessibilityComponent } from './shared/components/accessibility/accessibility.component';
+import { CadastroMoviesComponent } from './pages/cadastro-movies/cadastro-movies.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AccessibilityComponent } from './shared/components/accessibility/access
     ListSearchComponent,
     CardDetailsComponent,
     DetailsComponent,
-    AccessibilityComponent
+    AccessibilityComponent,
+    CadastroMoviesComponent
   ],
   imports: [
     BrowserModule,
