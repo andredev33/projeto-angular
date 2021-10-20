@@ -3,8 +3,6 @@ import { FormControl } from '@angular/forms';
 import { Component, OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Input } from '@angular/core';
 
 import { FilmeService } from '../../core/services/filme.service';
-import { IListaFilmes } from '../../shared/models/FilmeAPI.model';
-import { MoviesService } from '../../core/services/movies.service';
 import { Subscriber } from 'rxjs';
 
 @Component({
